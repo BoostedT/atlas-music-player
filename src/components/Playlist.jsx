@@ -4,7 +4,7 @@ import PlayListItem from "./PlayListItem.jsx";
 export default function Playlist({ items, selectedIndex }) {
   return (
     <div className="text-cloud-50">
-      <h3 className="mb-4 text-2xl font-bold">Playlist</h3>
+      <h3 className="mb-4 text-2xl font-bold text-clay-100 dark:text-cloud-50">Playlist</h3>
       <div className="space-y-1">
         {items.map((t, i) => (
           <PlayListItem
