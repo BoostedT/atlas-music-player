@@ -1,6 +1,6 @@
 import React from "react";
-import PlayControls from "./PlayControls.jsx";
-import VolumeControls from "./VolumeControls.jsx";
+import PlayControls from "./PlayControls.tsx";
+import VolumeControls from "./VolumeControls.tsx";
 
 export default function CurrentlyPlaying({
   coverSrc,

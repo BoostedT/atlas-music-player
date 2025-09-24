@@ -1,5 +1,5 @@
 import React from "react";
-import PlayListItem from "./PlayListItem.jsx";
+import PlayListItem from "./PlayListItem.tsx";
 
 export default function Playlist({ items, selectedIndex }) {
   return (

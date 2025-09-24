@@ -1,6 +1,17 @@
 import React from "react";
 import { Rewind, FastForward, Shuffle, Play, Pause } from "lucide-react";
 
+interface Props {
+  speed: number;
+  isPlaying: boolean;
+  canBack: boolean;
+  onSpeed: () => void;
+  onBack: () => void;
+  onPlayPause: () => void;
+  onForward: () => void;
+  onShuffle: () => void;
+}
+
 export default function PlayControls({
   speed = 1,
   isPlaying = false,
@@ -10,7 +21,7 @@ export default function PlayControls({
   onPlayPause,
   onForward,
   onShuffle,
-}) {
+}: Props) {
   const iconBtn =
     "size-12 rounded-lg flex items-center justify-center " +
     "transition transform hover:scale-110 active:scale-95 " +
@@ -52,11 +63,10 @@ export default function PlayControls({
         aria-label={isPlaying ? "Pause" : "Play"}
         className={`size-14 rounded-xl border flex items-center justify-center leading-none
                     transition hover:scale-105 active:scale-95
-                    ${
-                      isPlaying
-                        ? "bg-jelly-500 text-white border-jelly-500"
-                        : "bg-white text-black border-black/80 dark:bg-neutral-800 dark:text-white dark:border-white/80"
-                    }`}
+                    ${isPlaying
+            ? "bg-jelly-500 text-white border-jelly-500"
+            : "bg-white text-black border-black/80 dark:bg-neutral-800 dark:text-white dark:border-white/80"
+          }`}
       >
         {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
       </button>
