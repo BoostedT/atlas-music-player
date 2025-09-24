@@ -26,7 +26,7 @@ export default function MusicPlayer() {
       <div
         className="
           rounded-2xl border p-4 md:p-6 transition-colors duration-300
-          bg-white border-neutral-200 text-neutral-900
+          bg-white border-night-800 text-neutral-900
           dark:bg-night-900 dark:border-jelly-500 dark:text-cloud-50
         "
       >
@@ -35,7 +35,7 @@ export default function MusicPlayer() {
           <div
             className="
               md:w-1/2 md:pr-6 md:border-r transition-colors duration-300
-              border-neutral-200 dark:border-jelly-500
+              border-night-800 dark:border-jelly-500
             "
           >
             <CurrentlyPlaying
