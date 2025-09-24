@@ -23,10 +23,21 @@ export default function MusicPlayer() {
 
   return (
     <section className="mx-auto max-w-6xl p-4">
-      <div className="rounded-2xl border border-jelly-500 p-4 md:p-6 bg-night-900">
+      <div
+        className="
+          rounded-2xl border p-4 md:p-6 transition-colors duration-300
+          bg-white border-neutral-200 text-neutral-900
+          dark:bg-night-900 dark:border-jelly-500 dark:text-cloud-50
+        "
+      >
         <div className="flex flex-col gap-8 md:flex-row">
           {/* Left: player */}
-          <div className="md:w-1/2 md:pr-6 md:border-r md:border-jelly-500">
+          <div
+            className="
+              md:w-1/2 md:pr-6 md:border-r transition-colors duration-300
+              border-neutral-200 dark:border-jelly-500
+            "
+          >
             <CurrentlyPlaying
               coverSrc="https://images.pexels.com/photos/3721941/pexels-photo-3721941.jpeg?cs=srgb&dl=pexels-daniel-reche-718241-3721941.jpg&fm=jpg"
               title={tracks[selectedIndex].title}
@@ -49,7 +60,12 @@ export default function MusicPlayer() {
           </div>
 
           {/* Right: playlist */}
-          <div className="md:w-1/2 md:pl-6 text-mist-300">
+          <div
+            className="
+              md:w-1/2 md:pl-6 transition-colors duration-300
+              text-neutral-700 dark:text-mist-300
+            "
+          >
             <Playlist items={tracks} selectedIndex={selectedIndex} />
           </div>
         </div>

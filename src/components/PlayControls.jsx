@@ -23,7 +23,8 @@ export default function PlayControls({
         type="button"
         onClick={onSpeed}
         className="min-w-[2.5rem] text-lg font-semibold leading-none tracking-tight 
-                   transition hover:text-jelly-400"
+                   transition text-neutral-800 dark:text-neutral-200
+                   hover:text-jelly-400 dark:hover:text-jelly-400"
         aria-label="Change speed"
       >
         {speed}x
@@ -37,23 +38,25 @@ export default function PlayControls({
         aria-label="Back"
         className={
           canBack
-            ? `${iconBtn} text-white hover:text-jelly-400`
-            : "size-12 rounded-lg flex items-center justify-center text-gray-500 cursor-not-allowed"
+            ? `${iconBtn} text-neutral-800 dark:text-neutral-200 hover:text-jelly-400`
+            : "size-12 rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
         }
       >
         <Rewind className="w-7 h-7" />
       </button>
 
-      {/* Play / Pause — slightly bigger, but still square so it centers visually */}
+      {/* Play / Pause */}
       <button
         type="button"
         onClick={onPlayPause}
         aria-label={isPlaying ? "Pause" : "Play"}
         className={`size-14 rounded-xl border flex items-center justify-center leading-none
                     transition hover:scale-105 active:scale-95
-                    ${isPlaying
-                      ? "bg-jelly-500 text-white border-jelly-500"
-                      : "bg-white text-black border-black/80"}`}
+                    ${
+                      isPlaying
+                        ? "bg-jelly-500 text-white border-jelly-500"
+                        : "bg-white text-black border-black/80 dark:bg-neutral-800 dark:text-white dark:border-white/80"
+                    }`}
       >
         {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
       </button>
@@ -63,7 +66,7 @@ export default function PlayControls({
         type="button"
         onClick={onForward}
         aria-label="Forward"
-        className={`${iconBtn} text-white hover:text-jelly-400`}
+        className={`${iconBtn} text-neutral-800 dark:text-neutral-200 hover:text-jelly-400`}
       >
         <FastForward className="w-7 h-7" />
       </button>
@@ -73,7 +76,7 @@ export default function PlayControls({
         type="button"
         onClick={onShuffle}
         aria-label="Shuffle"
-        className={`${iconBtn} text-white hover:text-jelly-400`}
+        className={`${iconBtn} text-neutral-800 dark:text-neutral-200 hover:text-jelly-400`}
       >
         <Shuffle className="w-7 h-7" />
       </button>
