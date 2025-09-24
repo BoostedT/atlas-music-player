@@ -1,19 +1,20 @@
-// src/components/PlayListItem.jsx
 import React from "react";
 
-export default function PlayListItem({ title, artist, length }) {
+export default function PlayListItem({ title, artist, length, active }) {
   return (
-    <div className="flex items-start justify-between gap-4 py-2">
-      <div className="min-w-0">
-        <h3 className="text-base font-semibold text-gray-900 truncate">
-          {title}
-        </h3>
-        <p className="text-base font-semibold text-slate-400 -mt-1 truncate">
-          {artist}
-        </p>
+    <div
+      className={`
+        flex items-center justify-between rounded-md px-3 py-2 cursor-pointer transition
+        ${active 
+          ? "bg-mist-300/40 text-cloud-50" 
+          : "hover:bg-night-800 hover:text-cloud-50/90 text-smoke-400"}
+      `}
+    >
+      <div>
+        <div className="font-semibold text-jelly-400">{title}</div>
+        <div className="text-sm text-mist-300">{artist}</div>
       </div>
-
-      <span className="shrink-0 text-base font-semibold text-slate-400 tabular-nums">
+      <span className={`ml-2 ${active ? "text-jelly-400" : "group-hover:text-clay-100"}`}>
         {length}
       </span>
     </div>

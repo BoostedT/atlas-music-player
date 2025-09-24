@@ -1,5 +1,76 @@
 @import "tailwindcss";
 
-html, body, #root {
-  height: 100%;
+@keyframes slide {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.slider {
+  --track-h: 9px;
+  --thumb-size: 18px;
+  --thumb-color: #23D3A4;
+  --track-grad: linear-gradient(90deg, #23D3A4, #8b5cf6, #ec4899);
+}
+
+.slider {
+  appearance: none;
+  height: var(--track-h);
+  background: transparent;
+  border-radius: 9999px;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: var(--track-h);
+  border-radius: 9999px;
+  background: var(--track-grad);
+  background-size: 200% 100%;
+  animation: slide 6s linear infinite;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 9999px;
+  background: var(--thumb-color);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.12);
+  cursor: pointer;
+  margin-top: calc((var(--track-h) - var(--thumb-size)) / 2);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.slider:hover::-webkit-slider-thumb {
+  transform: scale(1.12);
+  box-shadow: 0 0 12px rgba(35,211,164,.65);
+  animation: pulse 1.5s infinite;
+}
+.slider:active::-webkit-slider-thumb {
+  transform: scale(1.18);
+}
+.slider:hover::-moz-range-thumb {
+  transform: scale(1.12);
+  box-shadow: 0 0 12px rgba(35,211,164,.65);
+  animation: pulse 1.5s infinite;
+}
+
+@theme {
+  --font-sans:
+    "Urbanist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --color-night-900: #0f115f;
+  --color-night-800: #0f0e24;
+  --color-night-700: #131433;
+  --color-jelly-500: #23d3a4;
+  --color-jelly-400: #32e0b3;
+  --color-mist-100: #eaf3f1;
+  --color-mist-300: #b7c5c2;
+  --color-cloud-50: #f7faff;
+  --color-smoke-500: #7f8b9a;
+  --color-smoke-400: #9aa4b2;
+  --color-smoke-300: #a9a9b0;
+  --color-clay-100: #283640;
 }

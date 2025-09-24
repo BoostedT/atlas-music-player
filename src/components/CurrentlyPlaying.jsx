@@ -4,38 +4,37 @@ import VolumeControls from "./VolumeControls.jsx";
 
 export default function CurrentlyPlaying({
   coverSrc,
-  title = "Painted in Blue",
-  artist = "Soul Canvas",
-  speed = 1,
-  isPlaying = false,
-  canBack = false,
+  title,
+  artist,
+  speed,
+  isPlaying,
+  canBack,
   onSpeed,
   onBack,
   onPlayPause,
   onForward,
   onShuffle,
-  volume = 50,
+  value,
   onVolumeChange,
 }) {
   return (
-    <section className="w-full max-w-xl rounded-2xl bg-white p-6 sm:p-8 shadow-md">
-      {/* Cover Art */}
-      <div className="w-full overflow-hidden rounded-2xl bg-gray-200">
-        <img
-          src={coverSrc}
-          alt="Album Art"
-          className="h-full w-full aspect-square object-cover"
-        />
-      </div>
+    <div className="text-cloud-50">
+      {/* Large cover */}
+      <img
+        src={coverSrc}
+        alt={title}
+        className="aspect-square w-full rounded-xl object-cover bg-night-800"
+      />
 
-      {/* Title + Artist */}
+      {/* Title / Artist */}
       <div className="mt-6">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+        <h2 className="text-2xl font-extrabold text-jelly-500">
           {title}
         </h2>
-        <p className="mt-2 text-lg text-slate-500">{artist}</p>
+        <p className="mt-1 text-base text-mist-300">{artist}</p>
       </div>
 
+      {/* Controls row */}
       <div className="mt-6">
         <PlayControls
           speed={speed}
@@ -49,13 +48,10 @@ export default function CurrentlyPlaying({
         />
       </div>
 
-      {/* Volume */}
+      {/* Volume slider */}
       <div className="mt-6">
-        <VolumeControls
-          value={volume}
-          onChange={onVolumeChange}
-        />
+        <VolumeControls value={value} onChange={onVolumeChange} />
       </div>
-    </section>
+    </div>
   );
 }
