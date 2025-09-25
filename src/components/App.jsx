@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MusicPlayer from "./MusicPlayer.jsx";
+import MusicPlayer from "./MusicPlayer.tsx";
 import LoadingSkeleton from "./LoadingSkeleton.jsx";
 
 export default function App() {

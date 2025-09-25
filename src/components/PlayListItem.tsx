@@ -3,13 +3,27 @@ import React from "react";
 interface Props {
   title: string;
   artist: string;
-  length: string;
+  duration: number;
   active: boolean;
+  onClick: () => void;
 }
 
-export default function PlayListItem({ title, artist, length, active }: Props) {
+function formatDuration(seconds: number): string {
+  const minutes = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${minutes}:${secs.toString().padStart(2, "0")}`;
+}
+
+export default function PlayListItem({
+  title,
+  artist,
+  duration,
+  active,
+  onClick,
+}: Props) {
   return (
     <div
+      onClick={onClick}
       className={`
         group flex items-center justify-between rounded-lg px-3 py-2 cursor-pointer transition-all
         ${
@@ -39,7 +53,7 @@ export default function PlayListItem({ title, artist, length, active }: Props) {
           active ? "text-jelly-400" : "group-hover:text-cloud-50"
         }`}
       >
-        {length}
+        {formatDuration(duration)}
       </span>
     </div>
   );
