@@ -27,3 +27,4 @@ package-lock.json
 tailwind.config.cjs
 .gitignore
 tailwind.config.cs
+coverage
