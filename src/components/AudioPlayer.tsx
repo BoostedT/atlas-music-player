@@ -25,7 +25,7 @@ export default function AudioPlayer({
     audio.playbackRate = speed;
 
     if (isPlaying) {
-      audio.play().catch((err) => console.error("Audio play failed:", err));
+      audio.play()?.catch?.(() => { });
     } else {
       audio.pause();
     }
