@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SongTitle > renders with long title and artist 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="text-lg font-bold"
+    >
+      A Very Very Long Song Title That Should Wrap
+    </h2>
+    <p
+      class="text-sm text-gray-600"
+    >
+      An Incredibly Long Artist Name To Test Layout
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SongTitle > renders with only title 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="text-lg font-bold"
+    >
+      Test Song
+    </h2>
+    <p
+      class="text-sm text-gray-600"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SongTitle > renders with title and artist 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="text-lg font-bold"
+    >
+      Test Song
+    </h2>
+    <p
+      class="text-sm text-gray-600"
+    >
+      Test Artist
+    </p>
+  </div>
+</DocumentFragment>
+`;

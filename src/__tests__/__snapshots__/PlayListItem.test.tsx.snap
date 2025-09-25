@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PlayListItem > renders active playlist item 1`] = `
+<DocumentFragment>
+  <button
+    class="
+        group flex items-center justify-between rounded-lg px-3 py-2 transition-all text-left w-full
+        bg-jelly-500/20 text-cloud-50 shadow-md
+      "
+    type="button"
+  >
+    <div>
+      <div
+        class="font-semibold text-jelly-400"
+      >
+        Test Song
+      </div>
+      <div
+        class="text-sm text-mist-300 group-hover:text-mist-100"
+      >
+        Test Artist
+      </div>
+    </div>
+    <span
+      class="ml-2 text-sm text-jelly-400"
+    >
+      3:20
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`PlayListItem > renders inactive playlist item 1`] = `
+<DocumentFragment>
+  <button
+    class="
+        group flex items-center justify-between rounded-lg px-3 py-2 transition-all text-left w-full
+        hover:bg-night-800 hover:scale-[1.02] hover:shadow-md text-smoke-400
+      "
+    type="button"
+  >
+    <div>
+      <div
+        class="font-semibold group-hover:text-jelly-400"
+      >
+        Test Song
+      </div>
+      <div
+        class="text-sm text-mist-300 group-hover:text-mist-100"
+      >
+        Test Artist
+      </div>
+    </div>
+    <span
+      class="ml-2 text-sm group-hover:text-cloud-50"
+    >
+      3:20
+    </span>
+  </button>
+</DocumentFragment>
+`;

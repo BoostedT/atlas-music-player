@@ -22,10 +22,11 @@ export default function PlayListItem({
   onClick,
 }: Props) {
   return (
-    <div
+    <button
+      type="button"
       onClick={onClick}
       className={`
-        group flex items-center justify-between rounded-lg px-3 py-2 cursor-pointer transition-all
+        group flex items-center justify-between rounded-lg px-3 py-2 transition-all text-left w-full
         ${
           active
             ? "bg-jelly-500/20 text-cloud-50 shadow-md"
@@ -55,6 +56,6 @@ export default function PlayListItem({
       >
         {formatDuration(duration)}
       </span>
-    </div>
+    </button>
   );
 }
